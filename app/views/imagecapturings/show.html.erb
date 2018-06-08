@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @imagecapturing.name %>
+</p>
+
+<p>
+  <strong>Finish date:</strong>
+  <%= @imagecapturing.finish_date %>
+</p>
+
+<%= link_to 'Edit', edit_imagecapturing_path(@imagecapturing) %> |
+<%= link_to 'Back', imagecapturings_path %>

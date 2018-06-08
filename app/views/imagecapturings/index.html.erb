@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Imagecapturings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Finish date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @imagecapturings.each do |imagecapturing| %>
+      <tr>
+        <td><%= imagecapturing.name %></td>
+        <td><%= imagecapturing.finish_date %></td>
+        <td><%= link_to 'Show', imagecapturing %></td>
+        <td><%= link_to 'Edit', edit_imagecapturing_path(imagecapturing) %></td>
+        <td><%= link_to 'Destroy', imagecapturing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Imagecapturing', new_imagecapturing_path %>
+
+<div><%= @q.inspect %></div>
+<%= search_form_for @search do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :finish_date_cont %>
+  <%= f.search_field :finish_date_cont %>
+
+  <%= f.submit "filter" %>
+<% end %>

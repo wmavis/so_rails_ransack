@@ -1,0 +1,27 @@
+<%= form_with(model: imagecapturing, local: true) do |form| %>
+  <% if imagecapturing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(imagecapturing.errors.count, "error") %> prohibited this imagecapturing from being saved:</h2>
+
+      <ul>
+      <% imagecapturing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finish_date %>
+    <%= form.date_select :finish_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

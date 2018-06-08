@@ -1,0 +1,2 @@
+class Imagecapturing < ApplicationRecord
+end
